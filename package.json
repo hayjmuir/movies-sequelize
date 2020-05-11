@@ -1,0 +1,32 @@
+{
+  "name": "movies-sequelize",
+  "version": "1.0.0",
+  "description": "# This app was built with    - Handlebars   + Node.js   - JavaScript   + JQuery    - Heroku   + NPM, Node Package Manager   - Express   + MySQL",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express.js": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayjmuir/movies-sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayjmuir/movies-sequelize/issues"
+  },
+  "homepage": "https://github.com/hayjmuir/movies-sequelize#readme"
+}
