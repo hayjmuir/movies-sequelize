@@ -8,7 +8,18 @@ var db= require("../models");
 // Index Page (displays all movies)
 router.get('/', function (req, res) {
   db.Movie.findAll({}).then(function(data) {
-      var hbsObject = { movies: data };
+    
+    let newData = data.map(elem=> {return {
+      id: elem.id,
+      movie_name: elem.movie_name,
+      watched: elem.watched
+    }})
+
+    
+    
+    
+    
+    var hbsObject = { movies: newData };
 
       console.log(hbsObject);
       res.render('index', hbsObject);
@@ -30,8 +41,11 @@ router.post("/", function(req, res) {
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   console.log("condition", condition);
-  db.Movie.Update({watched : req.body.watched}, condition, function() {
-    res.redirect("/");
+  db.Movie.Update({watched : req.body.watched},
+     {where:{
+    id: req.params.id
+  }})
+    .then(function(){res.redirect("/");
   });
 });
 
