@@ -17,7 +17,7 @@ app.use(express.static("./public"));
 
 // Routes
 // =============================================================
-var routes = require("./controllers/ontroller.js");
+var routes = require("./controllers/controller.js");
 
 app.use("/", routes);
 
