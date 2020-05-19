@@ -13,12 +13,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 // Routes
 // =============================================================
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+var routes = require("./controllers/ontroller.js");
+
+app.use("/", routes);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
